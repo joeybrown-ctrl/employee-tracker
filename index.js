@@ -13,3 +13,67 @@ connection.connect(function (err) {
     if (err) throw err;
     console.log("connected as id " + connection.threadId + "\n");
 });
+
+function main() {
+
+}
+
+function addDept() {
+
+}
+
+function addRole() {
+
+}
+
+function addEmp() {
+
+}
+
+///////////////////////
+
+function viewDept() {
+
+}
+
+function viewRole() {
+
+}
+
+function viewEmp() {
+
+}
+
+///////////////////////
+
+function updateEmpRole() {
+
+}
+
+function updateEmpManager() {
+
+}
+
+function viewEmpManager() {
+
+}
+
+//////////////////////////
+
+function deleteDept() {
+
+}
+
+function deleteRole() {
+
+}
+
+function deleteEmp(){
+
+}
+
+//////////////////////////
+
+function viewDeptBudget(){
+    
+}
