@@ -1,5 +1,4 @@
 const mysql = require("mysql");
-const inquirer = require("inquirer");
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -12,68 +11,8 @@ const connection = mysql.createConnection({
 connection.connect(function (err) {
     if (err) throw err;
     console.log("connected as id " + connection.threadId + "\n");
+    main();
 });
 
-function main() {
+module.exports = index.js;
 
-}
-
-function addDept() {
-
-}
-
-function addRole() {
-
-}
-
-function addEmp() {
-
-}
-
-///////////////////////
-
-function viewDept() {
-
-}
-
-function viewRole() {
-
-}
-
-function viewEmp() {
-
-}
-
-///////////////////////
-
-function updateEmpRole() {
-
-}
-
-function updateEmpManager() {
-
-}
-
-function viewEmpManager() {
-
-}
-
-//////////////////////////
-
-function deleteDept() {
-
-}
-
-function deleteRole() {
-
-}
-
-function deleteEmp(){
-
-}
-
-//////////////////////////
-
-function viewDeptBudget(){
-    
-}

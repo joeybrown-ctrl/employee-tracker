@@ -24,3 +24,19 @@ role_id INT,
 manager_id INT,
 PRIMARY KEY(id)
 );
+
+SELECT first_name, last_name, department.name FROM employee
+LEFT JOIN emp_role 
+ON employee.role_id = emp_role.id
+LEFT JOIN department
+ON emp_role.department_id = department.id;
+
+
+INSERT INTO department (dept_name)
+VALUES ("Human Resources"), ("Janitorial");
+
+INSERT INTO emp_role (title, salary, department_id)
+VALUES ("Manager", "90000", "22");
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES ("Jack", "Jones", "1", "2");
