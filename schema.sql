@@ -31,12 +31,17 @@ ON employee.role_id = emp_role.id
 LEFT JOIN department
 ON emp_role.department_id = department.id;
 
+SELECT first_name, last_name, role_id, manager_id, emp_role.title FROM employee
+LEFT JOIN emp_role
+ON employee.role_id = emp_role.id;
+
 
 INSERT INTO department (dept_name)
-VALUES ("Human Resources"), ("Janitorial");
+VALUES ("Human Resources"), ("Janitorial"), ("Engineering");
 
 INSERT INTO emp_role (title, salary, department_id)
-VALUES ("Manager", "90000", "22");
+VALUES ("Manager", "90000", "22"), ("Janitor", "150000", "23"), ("Engineer", "75000", "24");
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Jack", "Jones", "1", "2");
+VALUES ("Jack", "Jones", "1", NULL), ("Mister", "Cat", "2", NULL), ("Katya", "Zamo", "3", "001"),
+("Trixie", "Mattell", "3", "002"), ("Jinkx", "Monsoon", "5", NULL), ("Lady", "Gaga", "6", "003");
