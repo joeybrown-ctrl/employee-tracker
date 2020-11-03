@@ -4,7 +4,7 @@ USE employee_db;
 
 CREATE TABLE department (
 id INT NOT NULL AUTO_INCREMENT,
-name VARCHAR(30),
+dept_name VARCHAR(30),
 PRIMARY KEY(id)
 );
 
@@ -25,23 +25,24 @@ manager_id INT,
 PRIMARY KEY(id)
 );
 
-SELECT first_name, last_name, department.name FROM employee
+SELECT employee.first_name, employee.last_name, emp_role.title, emp_role.salary, department.dept_name, manager.first_name AS manager_firstname, manager.last_name AS manager_lastname FROM employee
 LEFT JOIN emp_role 
 ON employee.role_id = emp_role.id
 LEFT JOIN department
+ON emp_role.department_id = department.id
+LEFT JOIN employee manager 
+ON employee.manager_id = manager.id;
+
+SELECT emp_role.title, emp_role.salary, department.dept_name FROM emp_role
+LEFT JOIN department
 ON emp_role.department_id = department.id;
-
-SELECT first_name, last_name, role_id, manager_id, emp_role.title FROM employee
-LEFT JOIN emp_role
-ON employee.role_id = emp_role.id;
-
 
 INSERT INTO department (dept_name)
 VALUES ("Human Resources"), ("Janitorial"), ("Engineering");
 
 INSERT INTO emp_role (title, salary, department_id)
-VALUES ("Manager", "90000", "22"), ("Janitor", "150000", "23"), ("Engineer", "75000", "24");
+VALUES ("Manager", "90000", 1), ("Janitor", "150000", 2), ("Engineer", "75000", 3);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Jack", "Jones", "1", NULL), ("Mister", "Cat", "2", NULL), ("Katya", "Zamo", "3", "001"),
-("Trixie", "Mattell", "3", "002"), ("Jinkx", "Monsoon", "5", NULL), ("Lady", "Gaga", "6", "003");
+VALUES ("Jack", "Jones", 1, 2), ("Mister", "Cat", 2, 1), ("Katya", "Zamo", 3, 1),
+("Trixie", "Mattell", 3, 2), ("Jinkx", "Monsoon", 3, 1), ("Lady", "Gaga", 2, 3);
