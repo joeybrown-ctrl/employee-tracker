@@ -227,65 +227,66 @@ function updateEmpRole() {
 
     })
 
-    //delete functions
-    function deleteDept() {
-        inquirer.prompt([
-            {
-                type: "number",
-                name: "id",
-                message: "Enter department ID"
-            }
-        ]).then(answers => {
-            connection.query("DELETE FROM department WHERE ?", {
-                id: answers.id
-            },
-                function (err, res) {
-                    if (err) throw err;
-                    console.log(res.affectedRows + "Deleted department!\n");
-                    main();
-                });
-        });
-
-    }
-
-    function deleteRole() {
-        inquirer.prompt([
-            {
-                type: "number",
-                name: "id",
-                message: "Enter role ID"
-            }
-        ]).then(answers => {
-            connection.query("DELETE FROM emp_role WHERE ?", {
-                id: answers.id
-            },
-                function (err, res) {
-                    if (err) throw err;
-                    console.log(res.affectedRows + "Deleted role!\n");
-                    main();
-                });
-        });
-
-    }
-
-    function deleteEmp() {
-        inquirer.prompt([
-            {
-                type: "number",
-                name: "id",
-                message: "Enter employee ID"
-            }
-        ]).then(answers => {
-            connection.query("DELETE FROM employee WHERE ?", {
-                id: answers.id
-            },
-                function (err, res) {
-                    if (err) throw err;
-                    console.log(res.affectedRows + "Deleted employee!\n");
-                    main();
-                });
-        });
-    }
-
-// module.exports = index
 }
+
+//delete functions
+function deleteDept() {
+    inquirer.prompt([
+        {
+            type: "number",
+            name: "id",
+            message: "Enter department ID"
+        }
+    ]).then(answers => {
+        connection.query("DELETE FROM department WHERE ?", {
+            id: answers.id
+        },
+            function (err, res) {
+                if (err) throw err;
+                console.log(res.affectedRows + "Deleted department!\n");
+                main();
+            });
+    });
+
+}
+
+function deleteRole() {
+    inquirer.prompt([
+        {
+            type: "number",
+            name: "id",
+            message: "Enter role ID"
+        }
+    ]).then(answers => {
+        connection.query("DELETE FROM emp_role WHERE ?", {
+            id: answers.id
+        },
+            function (err, res) {
+                if (err) throw err;
+                console.log(res.affectedRows + "Deleted role!\n");
+                main();
+            });
+    });
+
+}
+
+function deleteEmp() {
+    inquirer.prompt([
+        {
+            type: "number",
+            name: "id",
+            message: "Enter employee ID"
+        }
+    ]).then(answers => {
+        connection.query("DELETE FROM employee WHERE ?", {
+            id: answers.id
+        },
+            function (err, res) {
+                if (err) throw err;
+                console.log(res.affectedRows + "Deleted employee!\n");
+                main();
+            });
+    });
+}
+
+
