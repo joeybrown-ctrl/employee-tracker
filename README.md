@@ -1,6 +1,8 @@
-# employee-tracker
+# Employee Tracker
 
   ![license](https://img.shields.io/badge/License-MIT-blue.svg)
+
+  ![example-gif](https://github.com/joeybrown-ctrl/employee-tracker/blob/main/assets/emp-tracker-gif.gif)
 
   ## Table of Contents
 
