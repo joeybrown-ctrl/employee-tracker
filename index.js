@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "Claptonrules77!!",
+    password: "",
     database: "employee_db"
 });
 
@@ -178,7 +178,6 @@ function viewEmp() {
 //update function
 function updateEmpRole() {
     connection.query("SELECT * FROM employee", function (err, res) {
-        console.log(res);
         const employees = res.map(element => {
             return (
                 {
@@ -187,9 +186,7 @@ function updateEmpRole() {
                 }
             )
         })
-        console.log(employees);
         connection.query("SELECT * FROM employee", function (err, res1) {
-            console.log(res1);
             const roles = res.map(element => {
                 return (
                     {
@@ -198,8 +195,6 @@ function updateEmpRole() {
                     }
                 )
             })
-            console.log(roles);
-
             inquirer.prompt([
                 {
                     type: "list",
@@ -214,7 +209,6 @@ function updateEmpRole() {
                     choices: roles
                 }
             ]).then(answers => {
-                console.log(answers)
                 connection.query("UPDATE employee SET role_id = ? WHERE id = ?",
                     [answers.employee, answers.role],
                     function (err, res) {

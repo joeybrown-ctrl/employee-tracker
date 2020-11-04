@@ -19,13 +19,13 @@
 <hr>
 
   ## Description 
-A command-line application that allows users to track employees by viewing, adding, updating and deleting employees, their roles, and departments. Built using Node.js with the Inquirer and mySQL NPM packges.
+A command-line application that allows users with businesses to track employees by viewing, adding, updating and deleting employees, their roles, and departments. Built using Node.js with the Inquirer and MySQL NPM packges, Visual Studio Code, and MySQL Workbench.
 
   ## Installation 
 Clone to local repository.
 
   ## Usage 
-Node.js, and a code-editor such as Visual Studio Code are required.
+A code editor such as Visual Studio Code is required, as are MySQL workbench, Node.js and NPM Inquirer and MySQL packages.
 
   ## Questions 
   
